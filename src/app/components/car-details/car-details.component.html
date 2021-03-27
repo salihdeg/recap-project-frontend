@@ -1,0 +1,14 @@
+<div *ngIf="carDetail" class="container">
+    <h1>{{carDetail.carDescription}}</h1>
+
+    <br>
+    <div *ngFor="let safeUrl of safeUrls">
+    <img [src]=(safeUrl) class="img-thumbnail" alt="{{carDetail.carDescription}}">
+    </div>
+    <h2>Color: {{carDetail.colorName}}</h2>
+    <h3>Daily Price: {{carDetail.dailyPrice}}₺</h3>
+</div>
+<div *ngIf="!carDetail" class="container">
+    <h1>No Car Images</h1>
+</div>
+

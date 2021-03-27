@@ -8,7 +8,11 @@ import { ColorComponent } from './components/color/color.component';
 import { CustomerComponent } from './components/customer/customer.component';
 import { NaviComponent } from './components/navi/navi.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { ToastrModule } from 'ngx-toastr';
+import { CarDetailsComponent } from './components/car-details/car-details.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,12 +20,17 @@ import { HttpClientModule } from '@angular/common/http';
     BrandComponent,
     ColorComponent,
     CustomerComponent,
-    NaviComponent
+    NaviComponent,
+    CarDetailsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      positionClass:"toast-bottom-right"
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
