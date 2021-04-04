@@ -1,14 +1,26 @@
 <div *ngIf="carDetail" class="container">
-    <h1>{{carDetail.carDescription}}</h1>
-
-    <br>
-    <div *ngFor="let safeUrl of safeUrls">
-    <img [src]=(safeUrl) class="img-thumbnail" alt="{{carDetail.carDescription}}">
+  <h1>{{ carDetail.carDescription }}</h1>
+  <br />
+  <div class="row">
+    <div style="width: 50%">
+      <div *ngFor="let safeUrl of safeUrls">
+        <img
+          [src]="safeUrl"
+          class="img-thumbnail"
+          alt="{{ carDetail.carDescription }}"
+        />
+      </div>
     </div>
-    <h2>Color: {{carDetail.colorName}}</h2>
-    <h3>Daily Price: {{carDetail.dailyPrice}}₺</h3>
+    <div style="width: 50%">
+      <h2>Color: {{ carDetail.colorName }}</h2>
+      <h3>Daily Price: {{ carDetail.dailyPrice }}₺</h3>
+      <button
+        (click)="addToCart()"
+        type="button"
+        class="btn btn-success"
+      >
+        Add To Cart
+      </button>
+    </div>
+  </div>
 </div>
-<div *ngIf="!carDetail" class="container">
-    <h1>No Car Images</h1>
-</div>
-

@@ -1,0 +1,75 @@
+<div class="content">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="title">Add Car</h5>
+            </div>
+            <div class="card-body">
+                <form [formGroup]= "carAddForm">
+                    <div class="mb-3">
+                        <label for="carDescription">Car Name</label>
+                        <div class="form-group">
+                            <input type="text" id="carDescription" formControlName="carDescription" class="form-control" placeholder="Car Name"/>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="brands">Brand Id</label>
+                        
+                        <div class="form-group">
+                            <select type="number" class="form-control dropdown" formControlName="brandId" name="brands" id="brands">
+                                <option value="" class="form-control" id="brandId" selected disabled hidden>Choose A Brand</option>
+                                <option [ngValue]="brand.brandId" class="form-control" id="brandId" *ngFor="let brand of brands">{{brand.brandName}}</option>
+                              </select>
+                        </div>
+                        
+                        <!-- <label for="brandId">Brand Id</label>
+                        <div class="form-group">
+                            <input type="number" id="brandId" formControlName="brandId" class="form-control" placeholder="Brand Id"/>
+                        </div> -->
+                    </div>
+                    <div class="mb-3">
+                        <label for="colors">Color Id</label>
+
+                        <div class="form-group">
+                            <select type="number" class="form-control dropdown" formControlName="colorId" name="colors" id="colors">
+                                <option value="" class="form-control" id="colorId" selected disabled hidden>Choose A Color</option>
+                                <option [ngValue]="color.colorId" class="form-control" id="brandId" *ngFor="let color of colors">{{color.colorName}}</option>
+                              </select>
+                        </div>
+
+                        <!-- <div class="form-group">
+                            <input type="number" id="colorId" formControlName="colorId" class="form-control" placeholder="Color Id"/>
+                        </div> -->
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="modelYear">Model Year</label>
+                        <input type="date" id="modelYear" formControlName="modelYear" name="modelYear" class="form-control" >
+                        <!-- <div class="form-group">
+                            <input type="text" id="modelYear" formControlName="modelYear" class="form-control" placeholder="Model Year"/>
+                        </div> -->
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="dailyPrice">Daily Price</label>
+                        <div class="form-group">
+                            <input type="number" id="dailyPrice" formControlName="dailyPrice" class="form-control" placeholder="Daily Price"/>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="isAvailable">Available</label>
+                        <div class="form-group">
+                            <input type="checkbox" checked id="isAvailable" formControlName="isAvailable">
+                            <label for="isAvailable">Available</label>
+                        </div>
+                    </div>
+                    
+                </form>
+            </div>
+            <div class="card-footer">
+                <button (click)="addCar()" class="btn btn-fill btn-primary">Add</button>
+            </div>
+        </div>
+    </div>
+</div>

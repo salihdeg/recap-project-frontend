@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from "@angular/router";
 import { Brand } from 'src/app/models/brand';
 import { BrandService } from 'src/app/services/brand.service';
 
@@ -13,10 +14,18 @@ export class BrandComponent implements OnInit {
   emptyBrand:Brand;
   dataLoaded = false;
 
-  constructor(private brandService:BrandService) { }
+  constructor(private brandService:BrandService, private router:Router) { }
 
   ngOnInit(): void {
     this.getBrands();
+  }
+
+  brandRouterWithId(brandId:number){
+    let routerLink = "/cars/brands/";
+    this.router.navigate([routerLink + brandId]);
+  }
+  brandRouter(routeLink:string){
+    this.router.navigate([routeLink]);
   }
 
   getBrands(){

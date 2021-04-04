@@ -1,7 +1,15 @@
+<!-- <label for="brands">Choose a brand:</label>
+
+<select name="brands" id="brands">
+  <option (change)="brandRouter('/cars')"routerLink = "/cars" value=null>All Brands</option>
+  <option (change)="brandRouterWithId(brand.brandId)" *ngFor="let brand of brands" value="{{brand.brandName}}">{{brand.brandName}}</option>
+</select> -->
+
+
 <thead>
   <th>Markalar</th>
 </thead>
-<ul class="list-group" id="collapseExample">
+  <ul class="list-group" id="collapseExample">
   <li (click)= "clearCurrentBrand()"
   routerLink = "/cars"
   [class]="getAllBrandClass()">Tüm Markalar</li>
