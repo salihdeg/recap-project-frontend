@@ -9,13 +9,16 @@ import { CustomerComponent } from './components/customer/customer.component';
 import { NaviComponent } from './components/navi/navi.component';
 import { CarDetailsComponent } from './components/car-details/car-details.component';
 import { CarFilterPipePipe } from './pipes/car-filter-pipe.pipe';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ToastrModule } from 'ngx-toastr';
 import { CartSummaryComponent } from './components/cart-summary/cart-summary.component';
 import { CarAddComponent } from './components/car-add/car-add.component';
+import { LoginComponent } from './components/login/login.component';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { CarManagerComponent } from './components/car-manager/car-manager.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,9 @@ import { CarAddComponent } from './components/car-add/car-add.component';
     CarDetailsComponent,
     CarFilterPipePipe,
     CartSummaryComponent,
-    CarAddComponent
+    CarAddComponent,
+    LoginComponent,
+    CarManagerComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +46,9 @@ import { CarAddComponent } from './components/car-add/car-add.component';
       positionClass:"toast-bottom-right"
     }),
   ],
-  providers: [],
+  providers: [
+    {provide:HTTP_INTERCEPTORS, useClass:AuthInterceptor, multi:true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

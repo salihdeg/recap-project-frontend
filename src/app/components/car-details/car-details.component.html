@@ -1,17 +1,25 @@
 <div *ngIf="carDetail" class="container">
-  <h1>{{ carDetail.carDescription }}</h1>
-  <br />
+  <h1>{{carDetail.carDescription}}</h1>
   <div class="row">
-    <div style="width: 50%">
-      <div *ngFor="let safeUrl of safeUrls">
-        <img
-          [src]="safeUrl"
-          class="img-thumbnail"
-          alt="{{ carDetail.carDescription }}"
-        />
+    <div class="col-md-9">
+      <div id="carImageControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div *ngFor="let safeUrl of safeUrls" class="carousel-item active">
+            <img [src]="safeUrl" class="d-block w-100" alt="{{carDetail.carDescription}}">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carImageControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carImageControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
     </div>
-    <div style="width: 50%">
+    
+    <div class="col-md-3">
       <h2>Color: {{ carDetail.colorName }}</h2>
       <h3>Daily Price: {{ carDetail.dailyPrice }}₺</h3>
       <button

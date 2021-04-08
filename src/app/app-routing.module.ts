@@ -2,7 +2,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CarAddComponent } from './components/car-add/car-add.component';
 import { CarDetailsComponent } from './components/car-details/car-details.component';
+import { CarManagerComponent } from './components/car-manager/car-manager.component';
 import { CarComponent } from './components/car/car.component';
+import { LoginComponent } from './components/login/login.component';
+import { LoginGuard } from './guards/login.guard';
 
 const routes: Routes = [
   {path:"", pathMatch: "full", component:CarComponent},
@@ -11,7 +14,8 @@ const routes: Routes = [
   {path:"cars/brands/:brandId", component:CarComponent},
   {path:"cars/colors/:colorId", component:CarComponent},
   {path:"cars/filters/:brandId/:colorId", component:CarComponent},
-  {path:"admin/cars/add", component:CarAddComponent},
+  {path:"admin/cars-manager", component:CarManagerComponent, canActivate:[LoginGuard]},
+  {path:"login", component:LoginComponent},
 ];
 
 @NgModule({
