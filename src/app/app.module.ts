@@ -21,6 +21,7 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { CarManagerComponent } from './components/car-manager/car-manager.component';
 import { RegisterComponent } from './components/register/register.component';
 import { PaymentComponent } from './components/payment/payment.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { PaymentComponent } from './components/payment/payment.component';
     LoginComponent,
     CarManagerComponent,
     RegisterComponent,
-    PaymentComponent
+    PaymentComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
