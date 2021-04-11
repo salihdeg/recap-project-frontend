@@ -7,6 +7,7 @@ import { CarDetail } from 'src/app/models/carDetail';
 import { CarImageDetail } from 'src/app/models/carImageDetail';
 import { CarService } from 'src/app/services/car.service';
 import { CartService } from 'src/app/services/cart.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-car',
@@ -31,7 +32,8 @@ export class CarComponent implements OnInit {
     private cartService: CartService,
     private activatedRoute: ActivatedRoute,
     private sanitizer: DomSanitizer,
-    private toastrService:ToastrService
+    private toastrService:ToastrService,
+    private userService:UserService
   ) {}
 
   ngOnInit(): void {

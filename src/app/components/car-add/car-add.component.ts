@@ -74,6 +74,8 @@ export class CarAddComponent implements OnInit {
       let carModel:Car = Object.assign({},this.carAddForm.value);
       this.carService.addCar(carModel).subscribe(response=>{
         this.toastrService.success(response.message,"Successfuly Added");
+        //reload page
+        window.location.reload();
       },responseError=>{
         if(responseError.error!=[]){
           this.toastrService.error(responseError.error.Message,"Error!");

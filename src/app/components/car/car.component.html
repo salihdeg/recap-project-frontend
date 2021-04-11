@@ -1,12 +1,17 @@
-
-
 <div class="mb-3">
   <label for="filterText" class="form-label">Search Car:</label>
-  <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="Enter Search Term">
+  <input
+    type="text"
+    [(ngModel)]="filterText"
+    class="form-control"
+    id="filterText"
+    placeholder="Enter Search Term"
+  />
 </div>
 <div *ngIf="filterText" class="alert alert-primary">
-You are searching for {{filterText}}
+  You are searching for {{ filterText }}
 </div>
+
 
 <div *ngIf="dataLoaded == false" class="spinner-border" role="status">
   <span class="visually-hidden">Loading...</span>
@@ -16,7 +21,7 @@ You are searching for {{filterText}}
   The Cars You Searched Couldn't Find
 </h3>
 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-  <div *ngFor="let car of carDetails | carFilterPipe:filterText" class="col">
+  <div *ngFor="let car of carDetails | carFilterPipe: filterText" class="col">
     <div class="card shadow-sm">
       <img
         class="bd-placeholder-img card-img-top"
@@ -30,29 +35,30 @@ You are searching for {{filterText}}
           {{ car.carDescription }}
         </p>
         <div class="d-flex justify-content-between align-items-center">
-          <small class="text-muted">Günlük Ücret: {{ car.dailyPrice | currency:'₺':'symbol' }}</small>
+          <small class="text-muted"
+            >Günlük Ücret: {{ car.dailyPrice | currency: "₺":"symbol" }}</small
+          >
         </div>
         <div class="d-flex justify-content-between align-items-center">
           <small class="text-muted">{{ car.brandName }}</small>
-          <small class="text-muted">{{ car.colorName }}</small> 
+          <small class="text-muted">{{ car.colorName }}</small>
         </div>
-        <br>
+        <br />
         <div class="d-flex justify-content-between align-items-center">
-         
-            <button
-              routerLink="/cars/{{ car.carId }}"
-              type="button"
-              class="btn btn-primary"
-            >
-              Detail
-            </button>
-            <button
-              (click)="addToCart(car)"
-              type="button"
-              class="btn btn-secondary"
-            >
-              Add To Cart
-            </button>
+          <button
+            routerLink="/cars/{{ car.carId }}"
+            type="button"
+            class="btn btn-primary"
+          >
+            Detail
+          </button>
+          <button
+            (click)="addToCart(car)"
+            type="button"
+            class="btn btn-secondary"
+          >
+            Add To Cart
+          </button>
         </div>
       </div>
     </div>

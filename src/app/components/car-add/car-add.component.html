@@ -1,13 +1,13 @@
 <div class="content">
     <div class="col-md-12">
-        <div class="accordion">
+        <div class="accordion" id="car-add-accordion">
             <div class="accordion-item">
-                <h2 class="accordion-header">
+                <h2 class="accordion-header" id="headingOne">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                     Add Car
                   </button>
                 </h2>
-                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#car-add-accordion">
                   <div class="accordion-body">
                     <form [formGroup]= "carAddForm">
                         <div class="mb-3">
@@ -23,7 +23,7 @@
                                 <select type="number" class="form-select" formControlName="brandId" name="brands" id="brands">
                                     <option value="" class="form-control" id="brandId" selected disabled hidden>Choose A Brand</option>
                                     <option [ngValue]="brand.brandId" class="form-control" id="brandId" *ngFor="let brand of brands">{{brand.brandName}}</option>
-                                  </select>
+                                </select>
                             </div>
                         </div>
                         <div class="mb-3">

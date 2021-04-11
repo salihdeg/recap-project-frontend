@@ -18,6 +18,7 @@ export class CarDetailsComponent implements OnInit {
   carDetail: CarDetail;
   carImages: CarImageDetail[];
   safeUrls: SafeUrl[];
+  firstSafeUrl: SafeUrl;
 
   constructor(
     private carService: CarService,
@@ -57,11 +58,19 @@ export class CarDetailsComponent implements OnInit {
   }
 
   translateToTrusted() {
-    this.safeUrls = [this.carImages.length];
     for (let index = 0; index < this.carImages.length; index++) {
-      this.safeUrls[index] = this.sanitizer.bypassSecurityTrustUrl(
-        this.carImages[index].imagePath
-      );
+      if (index === 0) {
+        if (this.carImages.length>1) {
+          this.safeUrls = [this.carImages.length]; 
+        }        
+        this.firstSafeUrl = this.sanitizer.bypassSecurityTrustUrl(
+          this.carImages[index].imagePath
+        );
+      }else{
+        this.safeUrls[index-1] = this.sanitizer.bypassSecurityTrustUrl(
+          this.carImages[index].imagePath
+        );
+      }
     }
   }
 

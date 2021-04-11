@@ -3,9 +3,17 @@
   <div class="row">
     <div class="col-md-9">
       <div id="carImageControls" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div *ngFor="let safeUrl of safeUrls" class="carousel-item active">
+        <div *ngIf="safeUrls" class="carousel-inner">
+          <div class="carousel-item active">
+            <img [src]="firstSafeUrl" class="d-block w-100" alt="{{carDetail.carDescription}}">
+          </div>
+          <div *ngFor="let safeUrl of safeUrls" class="carousel-item">
             <img [src]="safeUrl" class="d-block w-100" alt="{{carDetail.carDescription}}">
+          </div>
+        </div>
+        <div *ngIf="!safeUrls" class="carousel-inner">
+          <div class="carousel-item active">
+            <img [src]="firstSafeUrl" class="d-block w-100" alt="{{carDetail.carDescription}}">
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carImageControls" data-bs-slide="prev">
