@@ -16,7 +16,7 @@
         <div class="d-flex">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <app-cart-summary></app-cart-summary>
-            <li class="nav-item dropdown">
+            <li *ngIf="isAdmin" class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
                 href="#"
@@ -30,17 +30,35 @@
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a routerLink="admin/cars-manager" class="dropdown-item">Car Manager</a></li>
                 <li><hr class="dropdown-divider" /></li>
-                <li><a class="dropdown-item">Brand Manager</a></li>
+                <li><a style="pointer-events: none; background-color: red;" class="dropdown-item">Brand Manager</a></li>
                 <li><hr class="dropdown-divider" /></li>
-                <li><a class="dropdown-item">Color Manager</a></li>
+                <li><a style="pointer-events: none; background-color: red;" class="dropdown-item">Color Manager</a></li>
               </ul>
             </li>
+            <!-- <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Admin
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a routerLink="admin/cars-manager" class="dropdown-item">Car Manager</a></li>
+              </ul>
+            </li> -->
             
             <li class="nav-item">
-              <a class="nav-link" routerLink="login">Login</a>
+              <a *ngIf="!isAuth" class="nav-link" routerLink="login">Login</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Register</a>
+            <li *ngIf="!isAuth" class="nav-item">
+              <a class="nav-link" routerLink="register">Register</a>
+            </li>
+            <li *ngIf="isAuth" class="nav-item">
+              <a class="nav-link" (click)="logOut()">Log Out</a>
             </li>
           </ul>
         </div>

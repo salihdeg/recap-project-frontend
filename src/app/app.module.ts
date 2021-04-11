@@ -19,6 +19,8 @@ import { CarAddComponent } from './components/car-add/car-add.component';
 import { LoginComponent } from './components/login/login.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { CarManagerComponent } from './components/car-manager/car-manager.component';
+import { RegisterComponent } from './components/register/register.component';
+import { PaymentComponent } from './components/payment/payment.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { CarManagerComponent } from './components/car-manager/car-manager.compon
     CartSummaryComponent,
     CarAddComponent,
     LoginComponent,
-    CarManagerComponent
+    CarManagerComponent,
+    RegisterComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,

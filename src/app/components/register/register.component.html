@@ -1,0 +1,73 @@
+<body class="text-center">
+    <main class="form-signin">
+      <form [formGroup]="registerForm">
+        <img
+          class="mb-4"
+          src="http://127.0.0.1:8080/images/car-rental-logo.svg"
+          alt=""
+          width="150"
+          height="150"
+        />
+        <h1 class="h3 mb-3 fw-normal">Sign Up</h1>
+
+        <div class="form-floating">
+            <input
+              formControlName="firstName"
+              type="text"
+              class="form-control"
+              id="floatingFName"
+              placeholder="First Name"
+            />
+            <label for="floatingInput">First Name</label>
+          </div>
+          <div class="form-floating">
+            <input
+              formControlName="lastName"
+              type="text"
+              class="form-control"
+              id="floatingLName"
+              placeholder="Last Name"
+            />
+            <label for="floatingInput">Last Name</label>
+          </div>
+  
+        <div class="form-floating">
+          <input
+            formControlName="email"
+            type="email"
+            class="form-control"
+            id="floatingInput"
+            placeholder="name@example.com"
+          />
+          <label for="floatingInput">Email</label>
+        </div>
+        <div class="form-floating">
+          <input
+            formControlName="password"
+            type="password"
+            class="form-control"
+            id="floatingPassword"
+            placeholder="Password"
+          />
+          <label for="floatingPassword">Password</label>
+        </div>
+        <button
+          (click)="register()"
+          class="w-100 btn btn-lg btn-info"
+        >
+          Sign Up
+        </button>
+        <div class="footer">
+          <br>
+          <p>You have an account?</p>
+          <button
+          routerLink="/login"
+          class="w-80 btn btn-lg btn-primary"
+        >
+          Sign In!
+        </button>
+        </div>
+      </form>
+    </main>
+  </body>
+  

@@ -5,6 +5,8 @@ import { CarDetailsComponent } from './components/car-details/car-details.compon
 import { CarManagerComponent } from './components/car-manager/car-manager.component';
 import { CarComponent } from './components/car/car.component';
 import { LoginComponent } from './components/login/login.component';
+import { PaymentComponent } from './components/payment/payment.component';
+import { RegisterComponent } from './components/register/register.component';
 import { LoginGuard } from './guards/login.guard';
 
 const routes: Routes = [
@@ -16,6 +18,8 @@ const routes: Routes = [
   {path:"cars/filters/:brandId/:colorId", component:CarComponent},
   {path:"admin/cars-manager", component:CarManagerComponent, canActivate:[LoginGuard]},
   {path:"login", component:LoginComponent},
+  {path:"register", component:RegisterComponent},
+  {path:"payment", component:PaymentComponent},
 ];
 
 @NgModule({
