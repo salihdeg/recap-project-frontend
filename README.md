@@ -1,31 +1,28 @@
-<<<<<<< HEAD
-# RecapProjectFrontend
+# ReCapProject - Araç Kiralama Sistemi
+![banner](https://raw.githubusercontent.com/salihdeg/gitHubImages/master/Yazılım%20Geliştirici%20Yetiştirme%20kampı.png) 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.3.
+#### Bağlı Olduğu Restful API: [Rent A Car BackEnd](https://github.com/salihdeg/ReCapProject "Rent A Car BackEnd")
 
-## Development server
+## :pushpin: Home Page
+![projectscreen](https://raw.githubusercontent.com/salihdeg/gitHubImages/master/HomePage.png)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## :pushpin: Sing Up
+![projectscreen](https://raw.githubusercontent.com/salihdeg/gitHubImages/master/SignUp.png)
 
-## Code scaffolding
+## :pushpin: Sing In
+![projectscreen](https://raw.githubusercontent.com/salihdeg/gitHubImages/master/Sign%20In.png)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## :pushpin: Car Details
+![projectscreen](https://raw.githubusercontent.com/salihdeg/gitHubImages/master/Car-Details.png)
 
-## Build
+## :pushpin: Car List
+![projectscreen](https://raw.githubusercontent.com/salihdeg/gitHubImages/master/CarList.png)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## :pushpin: Car Manager
+![projectscreen](https://raw.githubusercontent.com/salihdeg/gitHubImages/master/Car-Manager.png)
 
-## Running unit tests
+## :pushpin: Car Manager Edit
+![projectscreen](https://raw.githubusercontent.com/salihdeg/gitHubImages/master/Car-Manager-Edit-Car.png)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-=======
-# recap-project-frontend
->>>>>>> 8ab08e727b968d377fba363dfd36b72a16256881
+## :pushpin: Car Manager Delete
+![projectscreen](https://raw.githubusercontent.com/salihdeg/gitHubImages/master/Car-Manager-Delete-Car.png)
