@@ -15,9 +15,14 @@ export class CartService {
     if (item) {
       return;
     }else{
-      let cartItem =  new CartItem();
-      cartItem.car = car;
-      CartItems.push(cartItem);
+      if (CartItems.length === 1) {
+        return;
+      }else{
+        let cartItem =  new CartItem();
+        cartItem.car = car;
+        CartItems.push(cartItem);
+      }
+      
     }
   }
 

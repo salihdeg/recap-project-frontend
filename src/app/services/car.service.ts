@@ -50,5 +50,13 @@ export class CarService {
     let addCarUrl = this.apiUrl + "cars/add";
     return this.httpClient.post<ResponseModel>(addCarUrl,car);
   }
+  deleteCar(car:Car):Observable<ResponseModel>{
+    let deleteCarUrl = this.apiUrl + "cars/delete";
+    return this.httpClient.post<ResponseModel>(deleteCarUrl,car);
+  }
+  updateCar(car:Car):Observable<ResponseModel>{
+    let updateCarUrl = this.apiUrl + "cars/update";
+    return this.httpClient.post<ResponseModel>(updateCarUrl,car);
+  }
 
 }
