@@ -8,10 +8,10 @@
 ## :pushpin: Home Page
 ![projectscreen](https://raw.githubusercontent.com/salihdeg/gitHubImages/master/frontend-readme/HomePage.png)
 
-## :pushpin: Sing Up
+## :pushpin: Sign Up
 ![projectscreen](https://raw.githubusercontent.com/salihdeg/gitHubImages/master/frontend-readme/SignUp.png)
 
-## :pushpin: Sing In
+## :pushpin: Sign In
 ![projectscreen](https://raw.githubusercontent.com/salihdeg/gitHubImages/master/frontend-readme/Sign%20In.png)
 
 ## :pushpin: Car Details
